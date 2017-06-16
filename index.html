@@ -17,26 +17,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <script src="https://fb.me/JSXTransformer-0.12.2.js"></script>
 </head>
 <body>
-	<script type="text/jsx">
-    /* [TODO APP] */
-    var TodoApp = React.createClass({
-      getInitialState: function(){
-        return {items: ['Todo #1','Todo #2']};
-      },
-      updateItems: function(newItem){
-        var allItems = this.state.items.concat([newItem]);
-        this.setState({items: allItems});
-      },
-      render: function(){
-        return (
-          <div>
-            <TodoBanner/>
-            <TodoList items={this.state.items}/>
-            <TodoForm onFormSubmit={this.updateItems}/>
-          </div>
-        );
-      }
-    });
+  <script type="text/jsx">
     /* [TODO BANNER] */
     var TodoBanner = React.createClass({
       render: function(){
@@ -87,6 +68,25 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
             <input type='text' ref='item' onChange={this.onChange} value={this.state.item}/>
             <input type='submit' value='Add'/>
           </form>
+        );
+      }
+    });
+     /* [TODO APP] */
+    var TodoApp = React.createClass({
+      getInitialState: function(){
+        return {items: ['Todo #1','Todo #2']};
+      },
+      updateItems: function(newItem){
+        var allItems = this.state.items.concat([newItem]);
+        this.setState({items: allItems});
+      },
+      render: function(){
+        return (
+          <div>
+            <TodoBanner/>
+            <TodoList items={this.state.items}/>
+            <TodoForm onFormSubmit={this.updateItems}/>
+          </div>
         );
       }
     });
