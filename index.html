@@ -21,7 +21,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
     /* [TODO APP] */
     var TodoApp = React.createClass({
       getInitialState: function(){
-        return {items: []};
+        return {items: ['Todo #1','Todo #2']};
       },
       updateItems: function(newItem){
         var allItems = this.state.items.concat([newItem]);
